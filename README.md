@@ -6,7 +6,7 @@
 -->
 
 # Introduction to GitHub
-
+I added this here to test git commands.
 _Get started using GitHub in less than an hour._
 
 <!-- 
