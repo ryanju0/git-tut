@@ -13,7 +13,7 @@ public class ClimbCommand extends CommandBase {
   private final ClimbSubsystem climbSubsystem;
   private final double speed;
 
-  publioc ClimbCommand(ClimbSubsystem climbSubsystem) {
+  public ClimbCommand(ClimbSubsystem climbSubsystem, double speed) {
       this.climbSubsystem = climbSubsystem;
       this.speed = speed;
       addRequirements(climbSubsystem);
@@ -21,17 +21,20 @@ public class ClimbCommand extends CommandBase {
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
       System.out.println("climbcommand started");   
+  }
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
     climbSubsystem.setMotor(speed);
+  }
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
     climbSubsystem.setMotor(0);
     System.out.println("climbcommand ended");
+  }
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {

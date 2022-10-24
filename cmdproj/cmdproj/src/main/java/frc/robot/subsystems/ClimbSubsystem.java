@@ -5,6 +5,9 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.commands.ClimbCommand;
+import edu.wpi.first.wpilibj.motorcontrol.Spark;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class ClimbSubsystem extends SubsystemBase {
 
@@ -17,10 +20,9 @@ public class ClimbSubsystem extends SubsystemBase {
     }
   /** Creates a new ExampleSubsystem. */
   public ClimbSubsystem() {}
-
   @Override
   public void periodic() {
-    // This method will be called once per scheduler run
+      SmartDashboard.putNumber("Climb encoder value" , getEncoderMeters());
   }
 
   @Override
@@ -28,10 +30,7 @@ public class ClimbSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run during simulation
   }
   public void setMotor(double speed) {
-    ClimbMotor.set(speed);
+    ClimbCommand(this,speed);
   }
-  @Override
-  public void periodic() {
-      SmartDashboard.putnumber("Climb encoder value" , getEncoderMeters());
-  }
+ 
 }
