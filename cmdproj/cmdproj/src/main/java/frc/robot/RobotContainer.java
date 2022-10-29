@@ -11,7 +11,7 @@ import frc.robot.subsystems.ClimbSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.RobotController;
+import frc.robot.commands.IntakeSetCmd;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
