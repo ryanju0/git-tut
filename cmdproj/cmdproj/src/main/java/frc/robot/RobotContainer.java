@@ -11,7 +11,8 @@ import frc.robot.subsystems.ClimbSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj.Joystick;
-import frc.robot.commands.IntakeSetCmd;
+import frc.robot.commands.IntakeCommand;
+import frc.robot.subsystems.IntakeSubsystem;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -25,9 +26,11 @@ public class RobotContainer {
   private final ClimbCommand m_autoCommand = new ClimbCommand(climbSubsystem,0);
   private final Joystick joystick1 = new Joystick(kJoystickPort);
   private static final int kJoystickPort = 0;
+  private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
+    intakeSubsystem.setDefaultCommand(new IntakeCommand(intakeSubsystem, true));
     // Configure the button bindings
     configureButtonBindings();
   }
