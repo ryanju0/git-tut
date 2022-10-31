@@ -8,7 +8,9 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ClimbCommand;
 import frc.robot.subsystems.ClimbSubsystem;
+import frc.robot.subsystems.Index;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.commands.IntakeCommand;
@@ -27,7 +29,7 @@ public class RobotContainer {
   private final Joystick joystick1 = new Joystick(kJoystickPort);
   private static final int kJoystickPort = 0;
   private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
-
+  private final Index indexSubsystem = new Index();
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     intakeSubsystem.setDefaultCommand(new IntakeCommand(intakeSubsystem, true));
@@ -44,6 +46,10 @@ public class RobotContainer {
   private void configureButtonBindings() {
     new JoystickButton(joystick1, 3).whenActive(new ClimbCommand(climbSubsystem, 0.5));
     new JoystickButton(joystick1, 4).whenActive(new ClimbCommand(climbSubsystem, 0.5));
+    new JoystickButton(joystick1, 5).whenActive(new ParallelCommandGroup(
+      new IntakeCommand(intakeSubsystem, false), 
+      new Index(indexSubsystem, false)
+  ));
   }
 
   /**
@@ -52,7 +58,7 @@ public class RobotContainer {
    * @return the command to run in autonomous
    */
   public Command getAutonomousCommand() {
+      return m_autoCommand;
     // An ExampleCommand will run in autonomous
-    return m_autoCommand;
   }
 }

@@ -18,5 +18,6 @@ public final class Constants {
         public static final int kRightMotorPort = 4;
         public static final double kOpenSpeed = -1;
         public static final double kCloseSpeed = 1;
+        public static final int kIndexSpeed = 3;
     }
 }
