@@ -32,7 +32,7 @@ public class RobotContainer {
   private final Index indexSubsystem = new Index();
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
-    intakeSubsystem.setDefaultCommand(new IntakeCommand(intakeSubsystem, true));
+    intakeSubsystem.setDefaultCommand(new IntakeCommand(intakeSubsystem, true, indexSubsystem));
     // Configure the button bindings
     configureButtonBindings();
   }
@@ -46,9 +46,7 @@ public class RobotContainer {
   private void configureButtonBindings() {
     new JoystickButton(joystick1, 3).whenActive(new ClimbCommand(climbSubsystem, 0.5));
     new JoystickButton(joystick1, 4).whenActive(new ClimbCommand(climbSubsystem, 0.5));
-    new JoystickButton(joystick1, 5).whenActive(new ParallelCommandGroup(
-      new IntakeCommand(intakeSubsystem, false), 
-      new Index(indexSubsystem, false)
+    new JoystickButton(joystick1, 5).whenActive(new ParallelCommandGroup(new IntakeCommand(intakeSubsystem, true, indexSubsystem
   ));
   }
 
