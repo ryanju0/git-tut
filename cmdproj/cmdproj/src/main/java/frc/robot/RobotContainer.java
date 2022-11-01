@@ -46,8 +46,9 @@ public class RobotContainer {
   private void configureButtonBindings() {
     new JoystickButton(joystick1, 3).whenActive(new ClimbCommand(climbSubsystem, 0.5));
     new JoystickButton(joystick1, 4).whenActive(new ClimbCommand(climbSubsystem, 0.5));
-    new JoystickButton(joystick1, 5).whenActive(new ParallelCommandGroup(new IntakeCommand(intakeSubsystem, true, indexSubsystem
-  ));
+    new JoystickButton(joystick1, 5).whenActive(new ParallelCommandGroup(new IntakeCommand(
+      intakeSubsystem, true, indexSubsystem
+  )));
   }
 
   /**
