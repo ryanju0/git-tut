@@ -5,17 +5,14 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.commands.ClimbCommand;
 import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.RobotController;
-import edu.wpi.first.wpilibj.TimedRobot;
+import com.revrobotics.CANSparkMax;
 
 public class ClimbSubsystem extends SubsystemBase {
 
-    private final Spark climbMotor = new Spark(2);
+    private final CANSparkMax climbMotor = new Spark(2);
     private final Encoder encoder = new Encoder(4, 5);
     private final double kEncoderTick2Meter = 1.0 / 4096.0 * 0.1 * Math.PI;
     
@@ -34,7 +31,7 @@ public class ClimbSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run during simulation
   }
   public void setMotor(double speed) {
-    climbMotor.set(speed);
+    climbMotor.set(speed); 
   }
  
 }
