@@ -20,4 +20,9 @@ public final class Constants {
         public static final double kCloseSpeed = 1;
         public static final int kIndexSpeed = 3;
     }
+    public static final class ClimbConstants {
+        public static final int kLeftClimbMotorPort = 18;
+        public static final int kRightClimbMotorPort = 17;
+    }
 }
+

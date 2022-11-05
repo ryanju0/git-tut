@@ -5,33 +5,35 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import edu.wpi.first.wpilibj.motorcontrol.Spark;
+import frc.robot.Constants.ClimbConstants;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Encoder;
 import com.revrobotics.CANSparkMax;
+import com.revrobotics.RelativeEncoder;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
 
 public class ClimbSubsystem extends SubsystemBase {
 
-    private final CANSparkMax climbMotor = new Spark(2);
-    private final Encoder encoder = new Encoder(4, 5);
-    private final double kEncoderTick2Meter = 1.0 / 4096.0 * 0.1 * Math.PI;
-    
-    public double getEncoderMeters() {
-        return encoder.get() * kEncoderTick2Meter;
-    }
-  /** Creates a new ExampleSubsystem. */
-  public ClimbSubsystem() {}
-  @Override
-  public void periodic() {
-      SmartDashboard.putNumber("Climb encoder value" , getEncoderMeters());
-  }
 
-  @Override
-  public void simulationPeriodic() {
-    // This method will be called once per scheduler run during simulation
+    private final CANSparkMax leftMotor = new CANSparkMax(ClimbConstants.kLeftClimbMotorPort, MotorType.kBrushless);
+    private final CANSparkMax rightMotor = new CANSparkMax(ClimbConstants.kRightClimbMotorPort, MotorType.kBrushless);
+    private final double kEncoderTick2Meter = 1.0 / 4096.0 * 0.1 * Math.PI;
+    private RelativeEncoder climbEncoder = leftMotor.getEncoder();
+
+
+  /** Creates a new ExampleSubsystem. 
+   * @return */
+  public void up() {
+    leftMotor.set(1); 
+    rightMotor.set(1);
   }
-  public void setMotor(double speed) {
-    climbMotor.set(speed); 
+  public void down() {
+    leftMotor.set(-1); 
+    rightMotor.set(-1);
   }
- 
+  public void stop() {
+    leftMotor.set(0); 
+    rightMotor.set(0);
+  }
 }

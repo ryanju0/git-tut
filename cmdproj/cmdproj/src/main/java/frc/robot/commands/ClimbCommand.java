@@ -27,12 +27,12 @@ public class ClimbCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    climbSubsystem.setMotor(speed);
+    climbSubsystem.up();
   }
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    climbSubsystem.setMotor(0);
+    climbSubsystem.stop();
     System.out.println("climbcommand ended");
   }
   // Returns true when the command should end.
