@@ -1,20 +1,17 @@
 package frc.robot.subsystems;
 
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
 import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.IntakeConstants;
+import com.revrobotics.CANSparkMax;
 
 public class IntakeSubsystem extends SubsystemBase {
 
-    private Spark intakeLeftMotor = new Spark(IntakeConstants.kLeftMotorPort);
-    private Spark intakeRightMotor = new Spark(IntakeConstants.kRightMotorPort);
-
-    public IntakeSubsystem() {
-    }
-
-    @Override
-    public void periodic() {
-    }
+    private final CANSparkMax intakeLeftMotor = new CANSparkMax(IntakeConstants.kLeftMotorPort, MotorType.kBrushless);
+    private final CANSparkMax intakeRightMotor = new CANSparkMax(IntakeConstants.kRightMotorPort, MotorType.kBrushless);
 
     public void setPosition(boolean open) {
         if (open) {

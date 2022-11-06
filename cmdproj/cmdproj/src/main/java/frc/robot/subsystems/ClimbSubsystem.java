@@ -15,14 +15,9 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 public class ClimbSubsystem extends SubsystemBase {
 
-
     private final CANSparkMax leftMotor = new CANSparkMax(ClimbConstants.kLeftClimbMotorPort, MotorType.kBrushless);
     private final CANSparkMax rightMotor = new CANSparkMax(ClimbConstants.kRightClimbMotorPort, MotorType.kBrushless);
-    private final double kEncoderTick2Meter = 1.0 / 4096.0 * 0.1 * Math.PI;
-    private RelativeEncoder climbEncoder = leftMotor.getEncoder();
-
-
-  /** Creates a new ExampleSubsystem. 
+    /** Creates a new ExampleSubsystem. 
    * @return */
   public void up() {
     leftMotor.set(1); 
