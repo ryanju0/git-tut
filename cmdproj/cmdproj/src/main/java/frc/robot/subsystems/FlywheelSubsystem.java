@@ -11,6 +11,7 @@ public class FlywheelSubsystem extends SubsystemBase{
     private final CANSparkMax FlywheelMotor = new CANSparkMax(FlywheelConstants.kFlywheelMotorPort, MotorType.kBrushless);
     public void Flywheel(){
         FlywheelPID = FlywheelMotor.getPIDController();
+        FlywheelPID.setFF(FlywheelConstants.kFF);
         FlywheelPID.setP(FlywheelConstants.kP);
         FlywheelPID.setI(FlywheelConstants.kI);
         FlywheelPID.setD(FlywheelConstants.kD);

@@ -24,5 +24,15 @@ public final class Constants {
         public static final int kLeftClimbMotorPort = 18;
         public static final int kRightClimbMotorPort = 17;
     }
+    public static final class FlywheelConstants {
+        public static final int kFlywheelMotorPort = 9 ;
+
+        public static double kP = 0.1;
+        public static double kI = 0;
+        public static double kD = 0;
+        public static double kFF = 0.000188;
+        public static double kV = 0.0075;
+
+    }
 }
 

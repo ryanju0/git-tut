@@ -6,9 +6,9 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 
 
 public class FlywheelCommand extends CommandBase{
-    private final FlywheelSubsystem flywheelsubsystem;
+    private final FlywheelSubsystem FlywheelSubsystem;
     public FlywheelCommand(FlywheelSubsystem flywheelsubsystem) {
-        this.flywheelsubsystem = flywheelsubsystem;
+        this.FlywheelSubsystem = flywheelsubsystem;
     }
 
     @Override
