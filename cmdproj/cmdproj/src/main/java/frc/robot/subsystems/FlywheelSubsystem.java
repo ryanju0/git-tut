@@ -11,6 +11,7 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 public class FlywheelSubsystem extends SubsystemBase{
     private PIDController FlywheelPID;
     private final CANSparkMax FlywheelMotor = new CANSparkMax(FlywheelConstants.kFlywheelMotorPort, MotorType.kBrushless);
+    private final CANSparkMax FlywheelSlave = new CANSparkMax(FlywheelConstants.kFlywheelMotorPort, MotorType.kBrushless);
     private RelativeEncoder flywheelEncoder;
     private PIDController controller;
     private final double kFF = 0.0075;
@@ -19,6 +20,7 @@ public class FlywheelSubsystem extends SubsystemBase{
     public void Flywheel(){
         flywheelEncoder = FlywheelMotor.getEncoder();
         controller = new PIDController (kP, 0.0, 0.0);
+        FlywheelSlave.follow(FlywheelMotor, true);
 
     }
     
