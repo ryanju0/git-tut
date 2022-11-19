@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ClimbCommand;
 import frc.robot.subsystems.ClimbSubsystem;
+import frc.robot.subsystems.FlywheelSubsystem;
 import frc.robot.subsystems.Index;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
@@ -30,6 +31,7 @@ public class RobotContainer {
   private static final int kJoystickPort = 0;
   private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
   private final Index indexSubsystem = new Index();
+  private final FlywheelSubsystem Flywheel  = new FlywheelSubsystem();
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     intakeSubsystem.setDefaultCommand(new IntakeCommand(intakeSubsystem, true, indexSubsystem));
