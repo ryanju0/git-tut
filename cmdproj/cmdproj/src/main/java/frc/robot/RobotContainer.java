@@ -7,6 +7,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ClimbCommand;
+import frc.robot.commands.FlywheelCommand;
 import frc.robot.subsystems.ClimbSubsystem;
 import frc.robot.subsystems.FlywheelSubsystem;
 import frc.robot.subsystems.Index;
@@ -51,6 +52,7 @@ public class RobotContainer {
     new JoystickButton(joystick1, 5).whenActive(new ParallelCommandGroup(new IntakeCommand(
       intakeSubsystem, true, indexSubsystem
   )));
+    new JoystickButton(joystick1, 6).whenActive(new FlywheelCommand(Flywheel));
   }
 
   /**
