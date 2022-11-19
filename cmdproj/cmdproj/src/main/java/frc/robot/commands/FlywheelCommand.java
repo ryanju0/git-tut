@@ -7,10 +7,14 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class FlywheelCommand extends CommandBase{
     private final FlywheelSubsystem FlywheelSubsystem;
+    public FlywheelEnum state;
     public FlywheelCommand(FlywheelSubsystem flywheelsubsystem) {
         this.FlywheelSubsystem = flywheelsubsystem;
     }
-
+    public FlywheelCommand(FlywheelSubsystem flywheel, FlywheelEnum state){
+        this.FlywheelSubsystem = flywheel;
+        this.state = state;
+    }
     @Override
     public void initialize() {
         System.out.println("flywheels started");   
@@ -18,7 +22,7 @@ public class FlywheelCommand extends CommandBase{
 
     @Override
     public void execute() {
-    FlywheelSubsystem.shootFar();
+    FlywheelSubsystem.shoot();
     }
 
     @Override
@@ -30,5 +34,9 @@ public class FlywheelCommand extends CommandBase{
     @Override
     public boolean isFinished() {
     return false;
+    }
+    public enum FlywheelEnum{
+        ON,
+        OFF
     }
 }

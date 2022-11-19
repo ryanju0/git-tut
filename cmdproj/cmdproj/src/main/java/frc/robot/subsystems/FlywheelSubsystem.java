@@ -14,7 +14,8 @@ public class FlywheelSubsystem extends SubsystemBase{
     private RelativeEncoder flywheelEncoder;
     private PIDController controller;
     private final double kFF = 0.0075;
-    private final double kP = 0.1;        private final double setpoint = 300;
+    private final double kP = 0.1;        
+    private final double setpoint = 300;
     public void Flywheel(){
         flywheelEncoder = FlywheelMotor.getEncoder();
         controller = new PIDController (kP, 0.0, 0.0);
