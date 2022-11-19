@@ -22,7 +22,6 @@ public class ClimbCommand extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-      System.out.println("climbcommand started");   
   }
   // Called every time the scheduler runs while the command is scheduled.
   @Override
@@ -33,7 +32,6 @@ public class ClimbCommand extends CommandBase {
   @Override
   public void end(boolean interrupted) {
     climbSubsystem.stop();
-    System.out.println("climbcommand ended");
   }
   // Returns true when the command should end.
   @Override

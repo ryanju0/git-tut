@@ -19,7 +19,6 @@ public class IntakeCommand extends CommandBase {
 
     @Override
     public void initialize() {
-        System.out.println("IntakeCommand started!");
     }
 
     @Override
@@ -29,7 +28,6 @@ public class IntakeCommand extends CommandBase {
 
     @Override
     public void end(boolean interrupted) {
-        System.out.println("IntakeCommand ended!");
     }
 
     @Override

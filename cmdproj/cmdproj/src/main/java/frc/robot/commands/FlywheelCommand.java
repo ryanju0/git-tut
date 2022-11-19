@@ -17,7 +17,6 @@ public class FlywheelCommand extends CommandBase{
     }
     @Override
     public void initialize() {
-        System.out.println("flywheels started");   
     }
 
     @Override
@@ -28,7 +27,6 @@ public class FlywheelCommand extends CommandBase{
     @Override
     public void end(boolean interrupted) {
     FlywheelSubsystem.stop();
-    System.out.println("flywheels ended");
     }
 
     @Override
