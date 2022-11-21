@@ -11,11 +11,9 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 public class ClimbCommand extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final ClimbSubsystem climbSubsystem;
-  private final double speed;
 
-  public ClimbCommand(ClimbSubsystem climbSubsystem, double speed) {
+  public ClimbCommand(ClimbSubsystem climbSubsystem, double d) {
       this.climbSubsystem = climbSubsystem;
-      this.speed = speed;
       addRequirements(climbSubsystem);
   }
 

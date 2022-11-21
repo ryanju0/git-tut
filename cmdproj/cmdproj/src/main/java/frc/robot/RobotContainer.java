@@ -27,7 +27,7 @@ import frc.robot.subsystems.IntakeSubsystem;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final ClimbSubsystem climbSubsystem = new ClimbSubsystem();
-  private final ClimbCommand m_autoCommand = new ClimbCommand(climbSubsystem,0);
+  private final ClimbCommand m_autoCommand = new ClimbCommand(climbSubsystem, 0);
   private final Joystick joystick1 = new Joystick(kJoystickPort);
   private static final int kJoystickPort = 0;
   private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem();

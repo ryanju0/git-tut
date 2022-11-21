@@ -5,11 +5,11 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.FlywheelConstants;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.RelativeEncoder;
-import com.revrobotics.SparkMaxPIDController;
+// import com.revrobotics.SparkMaxPIDController;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 public class FlywheelSubsystem extends SubsystemBase{
-    private PIDController FlywheelPID;
+    // private PIDController FlywheelPID;
     private final CANSparkMax FlywheelMotor = new CANSparkMax(FlywheelConstants.kFlywheelMotorPort, MotorType.kBrushless);
     private final CANSparkMax FlywheelSlave = new CANSparkMax(FlywheelConstants.kFlywheelSlavePort, MotorType.kBrushless);
     private RelativeEncoder flywheelEncoder;
