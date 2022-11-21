@@ -26,6 +26,7 @@ public final class Constants {
     }
     public static final class FlywheelConstants {
         public static final int kFlywheelMotorPort = 9 ;
+        public static final int kFlywheelSlavePort = 10 ;
 
         public static double kP = 0.1;
         public static double kI = 0;
