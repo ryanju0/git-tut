@@ -3,37 +3,39 @@ package frc.robot.commands;
 import frc.robot.subsystems.FlywheelSubsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
-
-
-public class FlywheelCommand extends CommandBase{
+public class FlywheelCommand extends CommandBase {
     private final FlywheelSubsystem FlywheelSubsystem;
     public FlywheelEnum state;
+
     public FlywheelCommand(FlywheelSubsystem flywheelsubsystem) {
         this.FlywheelSubsystem = flywheelsubsystem;
     }
-    public FlywheelCommand(FlywheelSubsystem flywheel, FlywheelEnum state){
+
+    public FlywheelCommand(FlywheelSubsystem flywheel, FlywheelEnum state) {
         this.FlywheelSubsystem = flywheel;
         this.state = state;
     }
+
     @Override
     public void initialize() {
     }
 
     @Override
     public void execute() {
-    FlywheelSubsystem.shoot();
+        FlywheelSubsystem.shoot();
     }
 
     @Override
     public void end(boolean interrupted) {
-    FlywheelSubsystem.stop();
+        FlywheelSubsystem.stop();
     }
 
     @Override
     public boolean isFinished() {
-    return false;
+        return false;
     }
-    public enum FlywheelEnum{
+
+    public enum FlywheelEnum {
         ON,
         OFF
     }
